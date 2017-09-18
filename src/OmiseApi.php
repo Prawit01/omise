@@ -12,11 +12,15 @@
 namespace PhpMob\Omise;
 
 use PhpMob\Omise\Api\Account as AccountApi;
+use PhpMob\Omise\Api\Balance as BalanceApi;
 use PhpMob\Omise\Api\Charge as ChargeApi;
+use PhpMob\Omise\Api\Customer as CustomerApi;
 use PhpMob\Omise\Api\Token as TokenApi;
 use PhpMob\Omise\Client\HttpClientInterface;
 use PhpMob\Omise\Facade\Account;
+use PhpMob\Omise\Facade\Balance;
 use PhpMob\Omise\Facade\Charge;
+use PhpMob\Omise\Facade\Customer;
 use PhpMob\Omise\Facade\Token;
 use PhpMob\Omise\Hydrator\FacadeHydration;
 use PhpMob\Omise\Hydrator\HydrationInterface;
@@ -51,7 +55,9 @@ class OmiseApi
      */
     private static $supports = [
         Account::class => AccountApi::class,
+        Balance::class => BalanceApi::class,
         Charge::class => ChargeApi::class,
+        Customer::class => CustomerApi::class,
         Token::class => TokenApi::class,
     ];
 
