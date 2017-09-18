@@ -18,7 +18,26 @@ use PhpMob\Omise\Model;
  *
  *
  * @property string id
+ * @property boolean livemode
+ * @property string location
+ * @property integer amount
+ * @property string currency
+ * @property string status
+ * @property string message
+ * @property string metadata
+ * @property string charge
+ * @property string created
  */
 class Dispute extends Model
 {
+    /**
+     * @return array
+     */
+    public function getUpdateData()
+    {
+        return [
+            'description' => $this->message,
+            'metadata' => $this->metadata,
+        ];
+    }
 }
